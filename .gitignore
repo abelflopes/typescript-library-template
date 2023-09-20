@@ -2,7 +2,7 @@
 dist
 
 # temporary files
-tmp
+.tmp
 
 # dependencies
 node_modules
