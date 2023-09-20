@@ -1,0 +1,8 @@
+# build output
+dist
+
+# temporary files
+tmp
+
+# dependencies
+node_modules
