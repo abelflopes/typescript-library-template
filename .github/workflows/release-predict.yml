@@ -1,0 +1,55 @@
+name: Release Predict
+run-name: ${{ github.workflow }} (${{ github.event_name  }} - ${{ github.ref_name }})
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  release_predict:
+    name: Release Predict
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    steps:
+      - run: echo "${{ (github.event_name == 'pull_request' && github.head_ref) || github.ref_name }}"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          # pull the actual branch instea of pulling the PR virtual branch so that
+          # semantic release has the right reference (otherwise will throw with invalid branch name)
+          # ref: ${{ (github.event_name == 'pull_request' && github.head_ref) || github.ref_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # delete GITHUB process.env vars so that semantic release does not prevent
+      # PR branches from failing validation
+      # executes semantic release dry run in the same process
+      - name: "Release Predict"
+        uses: actions/github-script@v6
+        with:
+          script: |
+            Object.keys(process.env)
+              .filter((i) => i !== "GITHUB_TOKEN" && i.includes("GITHUB"))
+              .forEach((k) => {
+                delete process.env[k];
+              });
+              
+            const { execSync } = __original_require__('node:child_process');
+              
+            execSync(
+              "npm run release -- --dry-run",
+              { stdio: "inherit" }
+            );

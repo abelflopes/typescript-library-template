@@ -11,6 +11,7 @@ A plug and play template project to help you quickly implement and distribute a 
 - Automated documentation generation based on code annotations with automated deployment through CI/CD workflows
 - Listing of TODO's and FIXME's in code
 - Validation CI/CD workflow
+- Automated versioning with conventional commits and automated release through CI/CD workflows
 - Pre configured package, make sure you rename it :)
 
 ## Using this template
@@ -26,3 +27,4 @@ A plug and play template project to help you quickly implement and distribute a 
 | `npm run test`| runs unit tests | add ` -- --watch` to run in watch mode |
 | `npm run docs`| build the generated docs |
 | `npm run todo`| list all TODO's and FIXME's |
+| `npm run release`| perform a release, should not be used as this is set up to run through CI/CD workflows |
