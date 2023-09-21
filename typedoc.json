@@ -1,0 +1,20 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "githubPages": true,
+  "navigationLinks": {
+    "Repository": "https://github.com/abelflopes/typescript-library-template",
+    "Issues": "https://github.com/abelflopes/typescript-library-template/issues"
+  },
+  "entryPoints": ["src/index.ts"],
+  "entryPointStrategy": "resolve",
+  "out": "./generated-docs",
+  "includeVersion": false,
+  "cacheBust": true,
+  "hideGenerator": true,
+  "searchInComments": true,
+  "compilerOptions": {
+    "jsx": "react",
+    "noEmitOnError": true,
+    "skipLibCheck": true
+  }
+}

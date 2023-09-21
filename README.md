@@ -8,6 +8,7 @@ A plug and play template project to help you quickly implement and distribute a 
 - Strict code linting and formatting setup with eslint and prettier
 - Plug and play tests with jest
 - Compatible git, editor, prettier and eslint configs so that you don't run into linebreak related issues with contributors using other operating systems (unix/windows)
+- Automated documentation generation based on code annotations
 - Pre configured package, make sure you rename it :)
 
 ## Using this template
@@ -21,3 +22,4 @@ A plug and play template project to help you quickly implement and distribute a 
 | `npm run format` | checks for formatting issues | add ` -- --write` to fix formatting automatically |
 | `npm run lint` | checks for code issues | add ` -- --fix` to fix issues automatically |
 | `npm run test`| runs unit tests | add ` -- --watch` to run in watch mode |
+| `npm run docs`| build the generated docs |
