@@ -8,7 +8,8 @@ A plug and play template project to help you quickly implement and distribute a 
 - Strict code linting and formatting setup with eslint and prettier
 - Plug and play tests with jest
 - Compatible git, editor, prettier and eslint configs so that you don't run into linebreak related issues with contributors using other operating systems (unix/windows)
-- Automated documentation generation based on code annotations
+- Automated documentation generation based on code annotations with automated deployment through CI/CD workflows
+- Listing of TODO's and FIXME's in code
 - Pre configured package, make sure you rename it :)
 
 ## Using this template
