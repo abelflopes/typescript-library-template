@@ -1,0 +1,5 @@
+# build output
+dist
+
+# markdown files - prevent tables formatting
+*.md

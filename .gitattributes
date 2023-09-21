@@ -1,0 +1,10 @@
+# https://git-scm.com/docs/gitattributes
+
+# Sync with linters, formatters, git and editor configs
+# prevent git changes caused from contributors using different OS's
+*.ts* text eol=lf
+*.js* text eol=lf
+*.*css text eol=lf
+*.*md text eol=lf
+*.*yml text eol=lf
+*.*json text eol=lf

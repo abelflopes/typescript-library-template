@@ -1,0 +1,15 @@
+# https://editorconfig.org/
+
+root = true
+
+
+[*]
+
+# Sync with linters, formatters, git and editor configs
+# prevent git changes caused from contributtors using different OS's
+end_of_line = lf
+
+insert_final_newline = true
+
+# Sync with linters, formatters and editor configs
+max_line_length=100
