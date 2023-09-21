@@ -1,0 +1,23 @@
+name: Validate
+
+on:
+  push:
+    branches: ["*"]
+
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: npm ci
+
+      - run: npm run test
+
+      - run: npm run build
+
+      - run: npm run lint
+
+      - run: npm run format
