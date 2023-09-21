@@ -10,7 +10,8 @@
     "test": "jest",
     "lint": "eslint . --ext ts,tsx",
     "format": "npx prettier . --check --cache",
-    "docs": "typedoc"
+    "docs": "typedoc",
+    "todo": "npx leasot '**/**' '.**/**' -i '**/node_modules/**' -S -x"
   },
   "keywords": [
     "typescript",
