@@ -13,7 +13,7 @@
     "format": "npx prettier . --check --cache",
     "docs": "typedoc",
     "todo": "npx leasot '**/**' '.**/**' -i '**/node_modules/**' -S -x",
-    "release": "semantic-release"
+    "clean": "rm -rf generated-docs dist node_modules"
   },
   "keywords": [
     "typescript",

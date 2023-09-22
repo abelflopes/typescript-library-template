@@ -29,4 +29,4 @@ A plug and play template project to help you quickly implement and distribute a 
 | `npm run test`| runs unit tests | add ` -- --watch` to run in watch mode |
 | `npm run docs`| build the generated docs |
 | `npm run todo`| list all TODO's and FIXME's |
-| `npm run release`| perform a release, should not be used as this is set up to run through CI/CD workflows |
+| `npm run clean`| clean temporary and dependency folders |

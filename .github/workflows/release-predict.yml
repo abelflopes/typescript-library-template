@@ -47,6 +47,6 @@ jobs:
             const { execSync } = __original_require__('node:child_process');
               
             execSync(
-              "npm run release -- --dry-run",
+              "npm exec -- semantic-release --dry-run",
               { stdio: "inherit" }
             );
