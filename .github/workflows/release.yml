@@ -1,7 +1,8 @@
 name: Release
 on:
-  push:
-    branches: ["master"]
+  # TODO: enable when code is ready to be released
+  # push:
+  #   branches: ["master"]
 
   workflow_dispatch:
 
@@ -42,6 +43,7 @@ jobs:
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
           echo "@abelflopes:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "access=public" >> .npmrc
 
       - name: Show git user
         run: git config --list
