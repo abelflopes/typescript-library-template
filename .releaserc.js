@@ -157,6 +157,8 @@ const config = {
       plugins.push([
         "@semantic-release/github",
         {
+          // sync with package.json files
+          assets: "dist/**/*",
           successComment: false,
           failComment: false,
         },
