@@ -13,6 +13,7 @@ A plug and play template project to help you quickly implement and distribute a 
 - Validation CI/CD workflow
 - Automated versioning with conventional commits and automated release through CI/CD workflows
 - Github action to cleanup workflows and caches
+- Local branch name validation & local + CI commit validation
 - Pre configured package, make sure you rename it :)
 
 ## Using this template
