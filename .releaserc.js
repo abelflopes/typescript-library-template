@@ -29,9 +29,9 @@ const options = {
    * - pushing to remote  */
   dryRun: args.includes("dryrun") || false,
   // If to tot true will publish package to registry
-  npmPublish: false,
+  npmPublish: true,
   //if set to true, will push version & changelog changes to remote
-  push: false,
+  push: true,
   // Path for changelog file
   changelogFile: "CHANGELOG.md",
 };
