@@ -5,7 +5,6 @@
  *
  * This is a custom semantic release configuration, extends plugins to push to git and has some
  * environment based configurations relying on GH Actions environment variables
- * https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
  *
  * Customizations differing from a standard config:
  * - dry run - dry run disables some plugins, and is allowed to run on any branch in a CI environment
@@ -18,18 +17,12 @@
 
 const args = process.argv.slice(2).map((i) => i.split("-").join("").toLowerCase());
 
-// Check GH Actions variables docs for more info
-// https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
-const eventName = process.env.GITHUB_EVENT_NAME;
-const currBranch = process.env.GITHUB_REF_NAME;
-const prTargetBranch = process.env.GITHUB_REF;
-
 const options = {
   /** set to true if running on ci environment - allow publishing GitHub releases */
   // https://semantic-release.gitbook.io/semantic-release/usage/configuration#ci
   // process.env.CI is injected by GH Actions - https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
   // ci checks are disabled for dry run so that it is allowed to run on pull requests
-  ci: !args.includes("dryrun") && !!process.env.CI,
+  ci: !!process.env.CI,
   /** if set to true will prevent:
    * - package publish
    * - tag creation
@@ -42,20 +35,6 @@ const options = {
   // Path for changelog file
   changelogFile: "CHANGELOG.md",
 };
-
-const branchCfg =
-  options.dryRun && !!process.env.CI
-    ? eventName === "pull_request"
-      ? prTargetBranch
-      : currBranch
-    : {
-        name: "master",
-        prerelease: false,
-        channel: false,
-      };
-
-console.log("process", process.env);
-console.log("branch", branchCfg);
 
 /**
  * https://semantic-release.gitbook.io/semantic-release/usage/configuration
@@ -72,8 +51,14 @@ const config = {
    * @see {@link file://./.github/workflows/release.yml}
    */
   branches: [
-    // allow any branch to run dry run when in CI
-    branchCfg,
+    // in case of dry run, allow any branch
+    options.dryRun
+      ? "**"
+      : {
+          name: "master",
+          prerelease: false,
+          channel: false,
+        },
   ],
   // https://semantic-release.gitbook.io/semantic-release/usage/configuration#ci
   ci: options.ci,

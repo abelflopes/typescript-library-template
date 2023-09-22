@@ -19,8 +19,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          # pull the actual branch instea of pulling the PR virtual branch so that
+          # semantic release has the right reference (otherwise will throw with invalid branch name)
+          ref: ${{ (github.event_name == 'pull_request' && github.head_ref) || github.ref_name }}
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           cache: npm
@@ -28,8 +31,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm run release -- --dry-run
+      # delete GITHUB process.env vars so that semantic release does not prevent
+      # PR branches from failing validation
+      # executes semantic release dry run in the same process
+      - name: "Release Predict"
+        uses: actions/github-script@v6
+        with:
+          script: |
+            Object.keys(process.env)
+              .filter((i) => i !== "GITHUB_TOKEN" && i.includes("GITHUB"))
+              .forEach((k) => {
+                delete process.env[k];
+              });
+              
+            const { execSync } = __original_require__('node:child_process');
+              
+            execSync(
+              "npm run release -- --dry-run",
+              { stdio: "inherit" }
+            );
