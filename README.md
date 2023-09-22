@@ -12,6 +12,7 @@ A plug and play template project to help you quickly implement and distribute a 
 - Listing of TODO's and FIXME's in code
 - Validation CI/CD workflow
 - Automated versioning with conventional commits and automated release through CI/CD workflows
+- Github action to cleanup workflows and caches
 - Pre configured package, make sure you rename it :)
 
 ## Using this template
