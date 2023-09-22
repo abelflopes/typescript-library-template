@@ -8,7 +8,7 @@ A plug and play template project to help you quickly implement and distribute a 
 - Strict code linting and formatting setup with eslint and prettier
 - Plug and play tests with jest
 - Compatible git, editor, prettier and eslint configs so that you don't run into linebreak related issues with contributors using other operating systems (unix/windows)
-- Automated documentation generation based on code annotations with automated deployment through CI/CD workflows
+- Automated documentation generation based on code annotations with automated deployment through CI/CD workflows, check it [here](https://abelflopes.github.io/typescript-library-template/)
 - Listing of TODO's and FIXME's in code
 - Validation CI/CD workflow
 - Automated versioning with conventional commits and automated release through CI/CD workflows
