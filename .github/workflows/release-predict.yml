@@ -2,12 +2,14 @@ name: Release Predict
 run-name: ${{ github.workflow }} (${{ github.event_name  }} - ${{ github.ref_name }})
 
 on:
+  push:
+    branches: ["*"]
   pull_request:
   workflow_dispatch:
 
 jobs:
   release_predict:
-    name: Release Predict
+    name: Predict Next Version
     runs-on: ubuntu-latest
     permissions:
       contents: write # to be able to publish a GitHub release
