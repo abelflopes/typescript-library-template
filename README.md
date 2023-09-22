@@ -1,48 +1,47 @@
-<div align="center">
-
 [![Deploy Documentation](https://github.com/abelflopes/typescript-library-template/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/abelflopes/typescript-library-template/actions/workflows/deploy-docs.yml)
 &nbsp;
 [![Release](https://github.com/abelflopes/typescript-library-template/actions/workflows/release.yml/badge.svg)](https://github.com/abelflopes/typescript-library-template/actions/workflows/release.yml)
 &nbsp;
 [![Validate](https://github.com/abelflopes/typescript-library-template/actions/workflows/validate.yml/badge.svg)](https://github.com/abelflopes/typescript-library-template/actions/workflows/validate.yml)
 
-<br />
-
 # Typescript Library Package Template
-
-<br />
 
 A plug and play template project to help you quickly implement and distribute a library, written in typescript.
 
-</div>
-
-<br />
-
 ## Features
 
-- Typescript with file emitting to dist
-- Strict code linting and formatting setup with eslint and prettier
-- Plug and play tests with jest
+- **Typescript** with file emitting to dist
+- Strict code linting and formatting setup with **eslint** and **prettier**
+- Plug and play tests **with** jest
 - Compatible git, editor, prettier and eslint configs so that you don't run into linebreak related issues with contributors using other operating systems (unix/windows)
-- Automated documentation generation based on code annotations with automated deployment through CI/CD workflows, check it [here](https://abelflopes.github.io/typescript-library-template/)
+- **Automated documentation generation** based on code annotations with automated deployment through CI/CD workflows, check it [here](https://abelflopes.github.io/typescript-library-template/)
 - Listing of TODO's and FIXME's in code
 - Validation CI/CD workflow
-- Automated versioning with conventional commits and automated release through CI/CD workflows
+- **Automated versioning** with conventional commits and automated release through CI/CD workflows
 - Github action to cleanup workflows and caches
 - Local branch name validation & local + CI commit validation
-- Pre configured package, make sure you rename it :)
 
-## Using this template
+## Using the template
 
-### Commands
+- [Guide](./docs/USING_THIS_TEMPLATE.md)
+- [Development](./docs/DEVELOPMENT.md)
 
-| Command | Description | Extra options |
-| - | - | - |
-| `npm start` | compiles into dist in watch mode |
-| `npm run build` | compiles into dist |
-| `npm run format` | checks for formatting issues | add ` -- --write` to fix formatting automatically |
-| `npm run lint` | checks for code issues | add ` -- --fix` to fix issues automatically |
-| `npm run test`| runs unit tests | add ` -- --watch` to run in watch mode |
-| `npm run docs`| build the generated docs |
-| `npm run todo`| list all TODO's and FIXME's |
-| `npm run clean`| clean temporary and dependency folders |
+## Tech stack
+
+[Typescript](https://www.typescriptlang.org/)
+&nbsp;
+[Jest](https://jestjs.io/)
+&nbsp;
+[Husky](https://github.com/typicode/husky)
+&nbsp;
+[Commitlint](https://commitlint.js.org/#/)
+&nbsp;
+[Github Actions](https://docs.github.com/en/actions)
+&nbsp;
+[Semantic Release](https://semantic-release.gitbook.io/semantic-release/)
+&nbsp;
+[Eslint](https://eslint.org/)
+&nbsp;
+[Prettier](https://prettier.io/)
+&nbsp;
+[Typedoc](https://typedoc.org/)
