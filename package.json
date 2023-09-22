@@ -4,6 +4,9 @@
   "description": "Example package built from the typescript library template",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "prepare": "husky install",
     "start": "tsc -p tsconfig.build.json -w",
