@@ -13,11 +13,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "deploy_docs"
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  deploy_docs:
+    name: Deploy Generated documentation
     environment:
       name: docs
       url: ${{ steps.deployment.outputs.page_url }}
@@ -28,11 +29,11 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Build docs
-        run: |
-          npm ci
-          npm run docs
+        run: npm run docs
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2

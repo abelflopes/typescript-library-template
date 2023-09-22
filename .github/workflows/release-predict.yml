@@ -34,7 +34,7 @@ jobs:
       # delete GITHUB process.env vars so that semantic release does not prevent
       # PR branches from failing validation
       # executes semantic release dry run in the same process
-      - name: "Release Predict"
+      - name: "Predict Next Version"
         uses: actions/github-script@v6
         with:
           script: |
