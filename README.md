@@ -1,3 +1,13 @@
+<p style="text-align: center;">
+
+[![Deploy Documentation](https://github.com/abelflopes/typescript-library-template/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/abelflopes/typescript-library-template/actions/workflows/deploy-docs.yml)
+&nbsp;
+[![Release](https://github.com/abelflopes/typescript-library-template/actions/workflows/release.yml/badge.svg)](https://github.com/abelflopes/typescript-library-template/actions/workflows/release.yml)
+&nbsp;
+[![Validate](https://github.com/abelflopes/typescript-library-template/actions/workflows/validate.yml/badge.svg)](https://github.com/abelflopes/typescript-library-template/actions/workflows/validate.yml)
+
+</p>
+
 # Typescript Package/Library Template
 
 A plug and play template project to help you quickly implement and distribute a library, written in typescript.
