@@ -39,6 +39,9 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
           echo "@abelflopes:registry=https://npm.pkg.github.com" >> .npmrc
 
+      - name: Show git user
+        run: git config --list
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
