@@ -1,10 +1,10 @@
 name: Deploy Documentation
 
 on:
-  push:
-    # TODO: sync with release branches
-    branches: ["develop"]
-
+  workflow_run:
+    workflows: [Release]
+    branches: ["master"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -19,7 +19,7 @@ concurrency:
 jobs:
   deploy:
     environment:
-      name: github-pages
+      name: docs
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
