@@ -1,9 +1,7 @@
 name: Release
 on:
-  # TODO: enable when code is ready to be released
-  # push:
+  # push: # TODO: enable when code is ready to be released
   #   branches: ["master"]
-
   workflow_dispatch:
 
 jobs:

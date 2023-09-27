@@ -2,7 +2,6 @@
 
 root = true
 
-
 [*]
 
 # Sync with linters, formatters, git and editor configs
