@@ -1,13 +1,3 @@
-/**
- * https://prettier.io/docs/en/options
- * @type import("prettier").Options
- */
-
-const config = {
-  quoteProps: "consistent",
-  bracketSameLine: true,
-  // Sync with linters, formatters and editor configs
-  printWidth: 100,
-};
+const config = require("@abelflopes/prettier-config-pro");
 
 module.exports = config;

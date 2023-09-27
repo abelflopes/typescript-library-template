@@ -27,6 +27,7 @@
   "author": "Abel Lopes (@abelflopes)",
   "devDependencies": {
     "@abelflopes/eslint-config-tsr-pro": "^1.0.1",
+    "@abelflopes/prettier-config-pro": "^1.0.0",
     "@babel/preset-env": "^7.22.20",
     "@babel/preset-typescript": "^7.22.15",
     "@commitlint/cli": "^17.7.1",
