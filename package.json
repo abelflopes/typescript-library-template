@@ -12,8 +12,8 @@
     "start": "tsc -p tsconfig.build.json -w",
     "build": "tsc -p tsconfig.build.json",
     "test": "jest",
-    "lint": "eslint . --ext ts,tsx",
-    "format": "npx prettier . --check --cache",
+    "lint": "tsc -p tsconfig.build.json --noEmit && eslint . --ext ts,tsx",
+    "format": "prettier . --check --cache --ignore-unknown",
     "docs": "typedoc",
     "todo": "npx leasot '**/**' '.**/**' -i '**/node_modules/**' -S -x",
     "clean": "rm -rf generated-docs dist node_modules"
