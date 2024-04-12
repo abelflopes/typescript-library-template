@@ -40,7 +40,7 @@ jobs:
       # if publish to npm
       - name: Setup npm auth
         run: |
-          echo "//registry.npmjs.org :_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
           echo "access=public" >> .npmrc
 
       # if publish to github
