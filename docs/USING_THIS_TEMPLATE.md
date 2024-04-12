@@ -45,7 +45,7 @@ Publishing a public package to npm
 ```yml
     - name: Setup npm auth
       run: |
-        echo "//registry.npmjs.org :_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
+        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
         echo "access=public" >> .npmrc
 ```
 
